@@ -418,6 +418,7 @@ def http_bot(
             state.messages[-1][-1] = "▌"
             yield (state, state.to_gradio_chatbot()) + (disable_btn,) * 5
 
+            output = ''
             try:
                 # Stream output
                 response = requests.post(
