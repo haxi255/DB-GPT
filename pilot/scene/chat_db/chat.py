@@ -99,7 +99,7 @@ class ChatWithDb(BaseChat):
             ### 走非流式的模型服务接口
 
             response = requests.post(
-                urljoin(CFG.MODEL_SERVER, "generate"),
+                urljoin(CFG.MODEL_SERVER, "worker_generate"),
                 headers=headers,
                 json=payload,
                 timeout=120,

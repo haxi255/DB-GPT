@@ -18,7 +18,7 @@ from langchain.prompts import PromptTemplate
 from pilot.configs.config import Config
 from pilot.conversation import conv_qa_prompt_template, conv_templates
 
-llmstream_stream_path = "generate_stream"
+llmstream_stream_path = "worker_generate_stream"
 
 CFG = Config()
 

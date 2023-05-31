@@ -360,7 +360,7 @@ def http_bot(
 
         if sql_mode == conversation_sql_mode["auto_execute_ai_response"]:
             response = requests.post(
-                urljoin(CFG.MODEL_SERVER, "generate"),
+                urljoin(CFG.MODEL_SERVER, "worker_generate"),
                 headers=headers,
                 json=payload,
                 timeout=120,
@@ -422,7 +422,7 @@ def http_bot(
             try:
                 # Stream output
                 response = requests.post(
-                    urljoin(CFG.MODEL_SERVER, "generate_stream"),
+                    urljoin(CFG.MODEL_SERVER, "worker_generate_stream"),
                     headers=headers,
                     json=payload,
                     stream=True,
