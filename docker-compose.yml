@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      image: db-gpt:latest
+    image: db-gpt:latest
     container_name: db-gpt  
     ports:
       - 8000:8000
