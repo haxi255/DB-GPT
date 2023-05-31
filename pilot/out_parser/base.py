@@ -36,9 +36,12 @@ class BaseOutputParser(ABC):
         pass
 
     def _parse_model_nostream_resp(self, response, sep: str):
+        print(f"_parse_model_nostream_resp response:{response}")
+
         text = response.text.strip()
         text = text.rstrip()
         text = text.lower()
+        print(f"_parse_model_nostream_resp:{text}")
         respObj = json.loads(text)
 
         xx = respObj["response"]
