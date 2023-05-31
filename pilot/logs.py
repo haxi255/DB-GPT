@@ -10,7 +10,7 @@ from colorama import Fore, Style
 
 from pilot.log.json_handler import JsonFileHandler, JsonFormatter
 from pilot.singleton import Singleton
-from pilot.speech import say_text
+# from pilot.speech import say_text
 
 
 class Logger(metaclass=Singleton):
@@ -86,8 +86,8 @@ class Logger(metaclass=Singleton):
     def typewriter_log(
         self, title="", title_color="", content="", speak_text=False, level=logging.INFO
     ):
-        if speak_text and self.speak_mode:
-            say_text(f"{title}. {content}")
+        # if speak_text and self.speak_mode:
+        #     say_text(f"{title}. {content}")
 
         for plugin in self.chat_plugins:
             plugin.report(f"{title}. {content}")
@@ -286,5 +286,5 @@ def print_assistant_thoughts(
             logger.typewriter_log("- ", Fore.GREEN, line.strip())
     logger.typewriter_log("CRITICISM:", Fore.YELLOW, f"{assistant_thoughts_criticism}")
     # Speak the assistant's thoughts
-    if speak_mode and assistant_thoughts_speak:
-        say_text(assistant_thoughts_speak)
+    # if speak_mode and assistant_thoughts_speak:
+    #     say_text(assistant_thoughts_speak)
