@@ -428,6 +428,8 @@ def http_bot(
                     stream=True,
                     timeout=20,
                 )
+                logger.info(f"response:{response.status_code}")
+
                 for chunk in response.iter_lines(decode_unicode=False, delimiter=b"\0"):
                     if chunk:
                         data = json.loads(chunk.decode())
@@ -460,6 +462,8 @@ def http_bot(
                             return
 
             except requests.exceptions.RequestException as e:
+                logger.info(f"exceptions:{e}")
+
                 state.messages[-1][-1] = server_error_msg + f" (error_code: 4)"
                 yield (state, state.to_gradio_chatbot()) + (
                     disable_btn,
@@ -475,7 +479,7 @@ def http_bot(
 
             # 记录运行日志
             finish_tstamp = time.time()
-            logger.info(f"{output}")
+            logger.info(f"output:{output}")
 
             with open(get_conv_log_filename(), "a") as fout:
                 data = {
