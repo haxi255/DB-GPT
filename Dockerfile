@@ -10,7 +10,7 @@ WORKDIR /app
 
 COPY . /app
 
-RUN #pip install -r requirements.txt --index-url https://mirrors.ustc.edu.cn/pypi/web/simple
+#RUN pip install -r requirements.txt --index-url https://mirrors.ustc.edu.cn/pypi/web/simple
 
 EXPOSE 3306
 EXPOSE 8000

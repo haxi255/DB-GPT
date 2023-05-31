@@ -745,6 +745,9 @@ def knowledge_embedding_store(vs_id, files):
 
 
 if __name__ == "__main__":
+    import os
+    os.environ["no_proxy"] = "localhost,127.0.0.1,::1"
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--host", type=str, default="0.0.0.0")
     parser.add_argument("--port", type=int)
