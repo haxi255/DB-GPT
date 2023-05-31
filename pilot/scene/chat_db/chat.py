@@ -104,6 +104,7 @@ class ChatWithDb(BaseChat):
                 json=payload,
                 timeout=120,
             )
+            logger.info(f"ChatWithDb response:{response}")
             ai_response_text = (
                 self.prompt_template.output_parser.parse_model_server_out(response)
             )
