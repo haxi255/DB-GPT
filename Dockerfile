@@ -1,16 +1,16 @@
 FROM db-gpt:latest
 
-#RUN apt-get update && apt-get install -y \
-#	git \
-#	python3 \
-#	pip
+RUN apt-get update && apt-get install -y \
+	git \
+	python3 \
+	pip
 
-	
+
 WORKDIR /app
 
 COPY . /app
 
-#RUN pip install -r requirements.txt --index-url https://mirrors.ustc.edu.cn/pypi/web/simple
+RUN pip install -r requirements.txt --index-url https://mirrors.ustc.edu.cn/pypi/web/simple
 
 EXPOSE 3306
 EXPOSE 8000
